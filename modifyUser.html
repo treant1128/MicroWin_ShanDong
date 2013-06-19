@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="myApp">
+<head>
+<title>悟空审核平台</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link type="text/css" href="css/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+
+<style type="text/css">
+
+body {
+padding-top: 60px;
+padding-bottom: 40px;
+}
+.sidebar-nav {
+padding: 9px 0;
+}
+
+@media (max-width: 1440px) {
+/* Enable use of floated navbar text */
+.navbar-text.pull-right {
+  float: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+}
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+#top {
+    position: absolute;
+}
+h1, p {
+    margin: 0;
+    padding: 0.3em 0;
+}
+#container {
+    min-height: 100%;
+    margin-bottom: -36px;
+}
+* html #container {
+    height: 100%;
+}
+#footer-spacer {
+    height: 36px;
+}
+#footer {
+    border-top: 1px solid #000;
+    height: 35px;
+}
+</style>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    
+    <script src="userT4.js"></script>
+</head>
+
+<body>
+
+<div id="top"></div>
+<div id="container">
+    <!--使用TasksController-->
+<div ng-controller="userT4Ctrl">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">悟空审核下发平台</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right" >
+              <a href="#" class="navbar-link" ng-click="Logout()">登出</a>
+            </p>
+            <p class="navbar-text pull-right" style="margin-right:5px;">
+              登录名:<a href="#" class="navbar-link">{{user}}</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+    	<div class="row-fluid">
+
+<!-- Main content Stared-->
+<div class="span12">
+
+
+<div class="row-fluid">
+<div class="form-horizontal">
+   <legend>查询以及功能</legend>
+    	<div class="control-group">
+<!--  
+<button id="addSendPlan_btn" class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加下发计划</button>
+-->    
+    </div>
+</div>
+
+<table>
+	<thead>
+		<th>用户名</td>
+	    <th>特征串</td>
+		<th>操作</td>
+	</thead>
+	<tbody>
+	<form ng-submit="save_user()">
+		<tr ng-repeat="user in users" onmouseover="this.style.backgroundColor ='#BBBB99'" onmouseout="this.style.backgroundColor ='#ffffff'">
+			<td class="taskId">{{user.name}}</td>
+			<td width="80%">
+				 <input ng-model="user.secret" type="text" width="100%">
+			</td>
+			<td>
+				<button class="btn btn-primary" ng-click="save_user(user)">修改</button>
+			</td>
+        </tr>
+	</form>
+	</tbody>	
+</table>
+      		
+		        	
+            <div><!-- row-fluid END-->
+		        </div><!-- span9 END-->
+		</div><!-- row-fluid END-->
+
+    </div><!--container-fluid END -->
+
+      <hr>
+	  
+    </div><!--/.fluid-container-->
+
+</div><!-- End of ng controller end-->
+    <div id="footer-spacer"></div>   
+</div>
+<div id="footer">
+     <!-- 底部版权信息开始-->
+		<table width="97%" border="0" cellspacing="0" cellpadding="0">
+			<tr><td height="1" bgcolor="CECFCE"></td></tr>
+			<tr><td align="center" class="f10"><br><img src="/img/logo.png"></img>&nbsp;&nbsp;Copyright &copy; 2008 - 2013 WUKONG.com, All Rights Reserved<br><br></td></tr>
+		</table>
+		<!-- 底部版权信息结束-->
+</div>
+
+
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          // Datepicker
+          $('#datepicker').datepicker({
+          });			
+
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="myApp2">
+<head>
+<title>唔箜后台</title>
+
+<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    
+    <script src="audit.js"></script>
+	
+	<style type="text/css">
+		.help {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<br>
+<!--使用TasksController-->
+<div ng-controller="AuditsCtrl">
+		<span id="infols"></span>
+		<form>
+		<table width="100%" class="infoForm">
+			<tr>
+				<td class="tdL">任务编号：</td>
+				<td class="tdR">
+					<input style="width: 400px" id="taskId" maxlength="100" 
+					type="text" readonly="readonly" disabled="disabled" ng-model="task.id"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="tdL"></td>
+				<td class="tdM"></td>
+			</tr>
+			<tr>
+				<td class="tdL">任务名称：</td>
+				<td class="tdR">
+					<input style="width: 400px" id="taskTitle" maxlength="100" 
+					type="text" readonly="readonly" disabled="disabled" ng-model="task.send_title"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="tdL"></td>
+				<td class="tdM"></td>
+			</tr>
+			<tr>
+				<td class="tdL">审核意见：</td>
+				<td class="tdR">
+					<textarea  name="task.auditSuggestion" id="auditSuggestion" cols='55' rows='8' ng-model="task.audit_suggestion"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td class="tdL"></td>
+				<td class="tdM"></td>
+			</tr>
+			<tr class="help">
+				<td></td>
+				<td>审核意见为空噢~~</td>
+			</tr>
+			<tr>
+				<td class="tdL"></td>
+				<td class="tdR">
+					<input type="button" value="保存" ng-click="saveSugg(task)"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" value="返回列表" ng-click="return2List()"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="tdL">&nbsp;</td>
+				<td class="tdR">&nbsp;</td>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</form>
+</div><!-- End of ng controller end-->	
+	</body>
+</html>
